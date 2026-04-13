@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
   { name: "Expertises", href: "/expertises" },
@@ -12,9 +12,21 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+
+    if (latest > previous && latest > 100) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-10 py-4 z-50 bg-[#FAF4EC]">
+    <motion.nav  variants={{   visible: { y: 0 },  hidden: { y: "-100%" },   }}  animate={hidden ? "hidden" : "visible"}  transition={{ duration: 0.35, ease: "easeInOut" }} className="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-10 py-4 z-50 "  >
       {/* Logo */}
       <Link href="/" className="w-24 md:w-28 relative z-[60]">
         <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 208 84" fill="none">
@@ -161,7 +173,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 
