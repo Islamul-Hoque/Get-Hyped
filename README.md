@@ -1,1 +1,1 @@
-# GETHyped
+# GET Hyped
