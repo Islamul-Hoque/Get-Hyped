@@ -65,7 +65,56 @@ const Hero = () => {
     return (
         <section className="bg-[#FAF4EC] min-h-screen py-30 px-6 overflow-hidden">
             {/* Header Section */}
-           ss
+            <div className="max-w-7xl mx-auto mb-20 text-left leading-none">
+                <div className="text-[3.5rem] md:text-[4.8rem]  font-bold  ">
+                    <span className="selection:bg-black selection:text-white inline-block">Get Hyped. Get</span> <br />
+                    <span className="selection:bg-black selection:text-white inline-block">Noticed. Get Results.</span>
+                </div>
+                <p className="mt-8 text-xl font-bold max-w-sm leading-relaxed">
+                    <span className="selection:bg-black selection:text-white">
+                        Klaar met gokken op content <br /> die niets oplevert?
+                    </span>
+                </p>
+            </div>
+
+            {/* Cards Grid Container */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
+                {cards.map((card) => (
+                    <div key={card.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ transform: `rotate(${card.initialRotate}deg)` }}
+                        className={`relative aspect-[3/4.2] rounded-[2.5rem] overflow-hidden shadow-2xl cursor-pointer ${card.type === "text" ? card.bgColor : "bg-black"
+                            }`}
+                    >
+                        {card.type === "text" ? (
+                            <div className="p-10 h-full flex flex-col justify-between text-white select-none">
+                                <h2 className="text-6xl font-black italic tracking-tighter">
+                                    <span className="selection:bg-black selection:text-white">{card.title}</span>
+                                </h2>
+                                <div className="space-y-3">
+                                    <h3 className="text-xl font-bold border-b border-black/10 pb-2">
+                                        <span className="selection:bg-black selection:text-white">{card.subtitle}</span>
+                                    </h3>
+                                    <p className="text-sm font-semibold">
+                                        <span className="selection:bg-black selection:text-white">{card.description}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        ) : (
+                            <video src={card.videoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover pointer-events-none" />
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            {/* Text */}
+            <div className="max-w-7xl mx-auto mt-32 md:pl-20">
+                <div className="w-full md:w-[75%]">
+                    <p className="text-3xl md:text-5xl font-bold ">
+                        <span className="selection:bg-black selection:text-white">
+                            Wij maken content die opvalt. Die blijft hangen. Die jouw doelgroep raakt en jouw merk in beweging brengt. Snel, krachtig en energiek.
+                        </span>
+                    </p>
+                </div>
+            </div>
         </section>
     );
 };
