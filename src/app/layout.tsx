@@ -11,7 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Get Hyped - Social-first content agency",
+  // title: "Get Hyped - Social-first content agency",
+  title: "Local",
   description: "Get Hyped brengt als short form content agency jouw merk in beweging met krachtige video's en foto's. Niks zonder strategie: alleen resultaatgerichte content.",
 };
 
