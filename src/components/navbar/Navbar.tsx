@@ -26,9 +26,10 @@ const Navbar = () => {
   });
 
   return (
-    <motion.nav  variants={{   visible: { y: 0 },  hidden: { y: "-100%" },   }}  animate={hidden ? "hidden" : "visible"}  transition={{ duration: 0.35, ease: "easeInOut" }} className="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-10 py-4 z-50 "  >
+    <motion.nav  variants={{   visible: { y: 0 },  hidden: { y: "-100%" },   }}  animate={hidden ? "hidden" : "visible"}  transition={{ duration: 0.35, ease: "easeInOut" }} 
+    className="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-10 py-4 z-50 "  >
       {/* Logo */}
-      <Link href="/" className="w-24 md:w-28 relative z-[60]">
+      <Link href="/" className="w-24 md:w-28 relative z-6000">
         <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 208 84" fill="none">
           <path d="M207.793 18.4091V68.8219C207.793 77.2049 200.998 84 192.615 84H7.46524C3.34207 84 0 80.6579 0 76.5348V37.5951C0 33.8732 2.69331 30.6933 6.36831 30.0829L186.384 0.251801C197.596 -1.60491 207.793 7.04266 207.793 18.4049" fill="#FAF4EC"></path>
           <path d="M188.876 80.0646H55.9061V25.8317L186.618 5.34814C195.454 3.96521 203.444 10.7945 203.444 19.7408V65.4969C203.444 73.5427 196.922 80.0646 188.876 80.0646Z" fill="black"></path>
