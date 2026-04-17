@@ -30,7 +30,6 @@ const BrandSlider = () => {
             align: "start"
         },
         [
-
             AutoScroll({
                 speed: 1,
                 stopOnInteraction: false,
@@ -42,10 +41,12 @@ const BrandSlider = () => {
     const rotationValues = [4, -4, 6, -6, 3, -3, 5, -5];
 
     return (
-        <section className="py-24 bg-[#FAF4EC] overflow-hidden select-none">
-            <h2 className="text-6xl text-[#1A1A1A] font-semibold !selection:bg-black !selection:text-white">
-                These brands <br /> got hyped.
-            </h2>
+        <section className="py-24 bg-[#FAF4EC] overflow-hidden">
+            <div className=" px-8 mb-16">
+                <h2 className="max-w-7xl mx-auto text-6xl text-[#1A1A1A] font-semibold selection:bg-black selection:text-white lead ing-[1] ">
+                    These brands <br /> got hyped.
+                </h2>
+            </div>
 
             <div className="embla py-16 cursor-grab active:cursor-grabbing"
                 ref={emblaRef}
@@ -70,6 +71,10 @@ const BrandSlider = () => {
                         </div>
                     ))}
                 </div>
+            </div>
+
+            <div className=" px-8 mt-10">
+                <hr className="border-t border-black/50" />
             </div>
         </section>
     );

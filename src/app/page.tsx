@@ -7,10 +7,10 @@ import Brands from "@/components/brands/Brands";
 export default function Home() {
   return (
     <div>
-      <Hero />
-      <Intro />
-      <Expertise />
-      <ContentScoring />
+      {/* <Hero /> */}
+      {/* <Intro /> */}
+      {/* <Expertise /> */}
+      {/* <ContentScoring /> */}
       <Brands />
     </div>
   );

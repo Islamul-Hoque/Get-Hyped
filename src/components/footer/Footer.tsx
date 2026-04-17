@@ -1,11 +1,12 @@
 import React from 'react';
+import BottomFooter from './BottomFooter';
 
 const Footer = () => {
-    return (
-        <div>
-            Footer
-        </div>
-    );
+  return (
+    <div>
+      <BottomFooter />
+    </div>
+  );
 };
 
 export default Footer;
