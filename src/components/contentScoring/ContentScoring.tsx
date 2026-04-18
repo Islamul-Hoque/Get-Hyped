@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useScroll, useTransform, motion } from "framer-motion";
 
 interface ScoringCardProps {
     text: string;
@@ -36,49 +36,59 @@ const scoringCards: ScoringCardProps[] = [
 ]
 
 export default function ContentScoring() {
+    const { scrollYProgress } = useScroll();
+
+    const spaceY = useTransform(scrollYProgress, [0, 0.5], ["-50px", "-100px"]);
+    const rotate = useTransform(scrollYProgress, [0, 0.5], [-0, 0]);
     return (
-        <section className="bg-[#FAF4EC] py-20 px-6 font-sans">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-16 md:w-1/2">
+        <section className="bg-[#FAF4EC] pb-14 px-6 font-sans">
+            <div className="max-w-7xl md:px-20 mx-auto">
+                <div className="-mb-6 md:pl-8 md:w-1/2">
                     <h2 className="text-5xl md:text-[5.5rem] font-bold tracking-tighter leading-none mb-6">  Content <br /> dat scoort. </h2>
-                    <p className="text-xl md:text-2xl font-semibold leading-snug text-black/80">
+                    <p className="text-xl md:text-2xl font-semibold  leading-snug text-black/80">
                         Wij vertellen jouw verhaal. Op een manier die écht past bij jouw doelgroep. Met creatieve content die werkt en het verschil maakt.
                     </p>
-                    {/* <button className="mt-8 group flex items-center gap-3 bg-transparent border border-black px-7 py-2.5 rounded-full font-bold hover:bg-black hover:text-white transition-all duration-300">
-                        Bekijk al ons werk
-                        <span className="bg-black text-white group-hover:bg-white group-hover:text-black rounded-full w-6 h-6 flex items-center justify-center transition-colors duration-300">
-                            <svg width="12" height="12" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.9554 26.0653L12.2003 23.337L20.4522 15.0851L0.404297 15.0851L0.404297 11.0996L20.4522 11.0996L12.2003 2.86109L14.9554 0.119385L27.9284 13.0923L14.9554 26.0653Z" fill="currentColor" />
-                            </svg>
-                        </span>
-                    </button> */}
 
-
-                      <motion.button className="relative mt-8 group flex items-center gap-3 pl-5 pr-1 py-1 border border-black rounded-[0.7rem] font-bold text-base cursor-pointer bg-transparent overflow-hidden" initial="initial" whileHover="hover"
+                    <motion.button className="relative mt-8 group flex items-center gap-3 pl-5 pr-1 py-1 border border-black rounded-[0.7rem] font-bold text-base cursor-pointer bg-transparent overflow-hidden" initial="initial" whileHover="hover"
+                        variants={{
+                            hover: {
+                                rotate: -4,
+                                transition: { type: "spring", stiffness: 300, damping: 12 }
+                            }
+                        }}
+                    >
+                        <motion.span className="text-black" variants={{ hover: { rotate: -1, transition: { duration: 0.3 } } }}  >
+                            Bekijk al ons werk
+                        </motion.span>
+                        <motion.div className="bg-black text-white rounded-[0.65rem] p-2 flex items-center justify-center"
                             variants={{
-                                hover: {
-                                    rotate: -4,
-                                    transition: { type: "spring", stiffness: 300, damping: 12 }
-                                }
+                                initial: { scale: 1, rotate: 0 },
+                                hover: { scale: 1, rotate: -8, transition: { type: "spring", stiffness: 400, damping: 10 } }
                             }}
                         >
-                            <motion.span className="text-black" variants={{ hover: { rotate: -1, transition: { duration: 0.3 } } }}  >
-                                Bekijk al ons werk
-                            </motion.span>
-                            <motion.div className="bg-black text-white rounded-[0.65rem] p-2 flex items-center justify-center"
-                                variants={{
-                                    initial: { scale: 1, rotate: 0 },
-                                    hover: { scale: 1, rotate: -8, transition: { type: "spring", stiffness: 400, damping: 10 } }
-                                }}
-                            >
-                                <ArrowRight size={18} strokeWidth={2.5} />
-                            </motion.div>
-                        </motion.button>
+                            <ArrowRight size={18} strokeWidth={2.5} />
+                        </motion.div>
+                    </motion.button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
+                {/* <div className="grid grid-cols-1 md:grid-cols-3 -space-y-24 md:space-y-0 md:gap-16 items-start">
                     {scoringCards.map((card, index) => (
                         <ScoringCard key={index} {...card} index={index} />
+                    ))}
+                </div> */}
+
+                <div className="grid grid-cols-1 md:grid-cols-3 md:gap-16 items-start">
+                    {scoringCards.map((card, index) => (
+                        <motion.div
+                            key={index}
+                            style={{
+                                marginBottom: index !== scoringCards.length - 1 ? spaceY : 0,
+                                rotate: rotate,
+                            }}
+                            className="md:!rotate-0 md:!mb-0"
+                        >
+                            <ScoringCard {...card} index={index} />
+                        </motion.div>
                     ))}
                 </div>
             </div>

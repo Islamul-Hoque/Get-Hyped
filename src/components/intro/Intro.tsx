@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Intro = () => {
     return (
-        <section className="bg-[#FAF4EC] py-20  px-6 overflow-hidden">
+        <section className="bg-[#FAF4EC] py-20 hidden md:block px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-end gap-10 md:gap-16 relative">
                 <div className="w-full md:w-[210px] shrink-0">
                     <div className="relative aspect-[3/4] rounded-[1rem] overflow-hidden">
@@ -19,7 +19,6 @@ const Intro = () => {
                             We stoppen niet bij mooie plaatjes en vette beelden. We maken het meetbaar. Zo weet je precies wat werkt en what niet. Nooit meer content zonder strategie. Nooit meer content zonder resultaat.
                         </p>
                     </div>
-
 
                     <div className="w-full flex justify-between items-end">
 

@@ -37,7 +37,7 @@ const Hero = () => {
     return (
         <section className="bg-[#FAF4EC] min-h-screen pt-30 px-6 overflow-hidden">
             {/* Header Section */}
-            <div className="max-w-7xl mx-auto mb-20 text-left">
+            <div className="max-w-7xl mx-auto mb-12 md:mb-14 text-left">
                 <h1 className="text-[3.5rem] md:text-[4.8rem] font-bold leading-[1.1] mb-8">
                     <span className="selection:bg-black selection:text-white">Get Hyped. Get</span> <br />
                     <span className="selection:bg-black selection:text-white">Noticed. Get Results.</span>
@@ -50,52 +50,43 @@ const Hero = () => {
             </div>
 
             {/* Cards Grid Container  */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
-                {cards.map((card) => (
-                    <div
-                        key={card.id}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        style={{ transform: `rotate(${card.initialRotate}deg)` }}
-                        className={`relative aspect-[3/4.2] rounded-[2.5rem] overflow-hidden shadow-2xl cursor-pointer ${card.type === "text" ? card.bgColor : "bg-black"
-                            }`}
+            <div className="max-w-7xl  mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
+                {cards.slice(0, 4).map((card, index) => (
+                    <div key={card.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ transform: `rotate(${card.initialRotate}deg)` }}
+                        className={`relative aspect-[3/4.2] rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden 
+                        ${card.type === "text" ? card.bgColor : "bg-black"}
+                        ${index >= 2 ? "hidden lg:block" : "block"} 
+                    `}
                     >
                         {card.type === "text" ? (
-                            <div className="p-10 h-full flex flex-col justify-between text-white relative z-10">
-                                <h2 className="text-6xl font-black italic tracking-tighter">
+                            <div className="p-4 sm:p-10 h-full flex flex-col justify-between text-black relative z-10">
+                                <h2 className="text-3xl sm:text-6xl font-black italic tracking-tighter">
                                     <span className="selection:bg-black selection:text-white leading-tight inline-block">
                                         {card.title}
                                     </span>
                                 </h2>
-                                <div className="space-y-3">
-                                    <h3 className="text-xl font-bold border-b border-black/10 pb-2">
+                                <div className="space-y-1 sm:space-y-3">
+                                    <h3 className="text-xs sm:text-xl font-bold border-b border-black pb-1 sm:pb-2">
                                         <span className="selection:bg-black selection:text-white leading-normal inline-block">
                                             {card.subtitle}
                                         </span>
                                     </h3>
-                                    <p className="text-sm font-semibold">
-                                        <span className="selection:bg-black selection:text-white leading-normal inline-block">
-                                            {card.description}
-                                        </span>
+                                    <p className="text-[10px] sm:text-sm font-semibold opacity-90">
+                                        {card.description}
                                     </p>
                                 </div>
                             </div>
                         ) : (
-                            <video
-                                src={card.videoUrl}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover pointer-events-none"
-                            />
+                            <video autoPlay loop muted playsInline className="w-full h-full object-cover pointer-events-none" >
+                                <source src={card.videoUrl} type="video/mp4" />
+                            </video>
                         )}
                     </div>
                 ))}
             </div>
 
             {/* Bottom Text */}
-            <div className="max-w-7xl mx-auto mt-32 md:pl-20">
+            <div className="max-w-7xl mx-auto mt-20 md:mt-32 md:pl-20">
                 <div className="w-full md:w-[75%]">
                     <p className="text-3xl md:text-5xl font-bold leading-[1.3]">
                         <span className="selection:bg-black selection:text-white">

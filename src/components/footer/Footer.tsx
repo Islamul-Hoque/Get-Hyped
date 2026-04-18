@@ -644,10 +644,11 @@ const HeroPart: React.FC = () => {
         <div className="relative flex flex-col min-h-screen w-full bg-[#FAF4EC] overflow-hidden">
             
             {/* --- Part-1: Hero Section --- */}
-            <div  onMouseMove={handleMouseMove}  className="relative h-screen w-full flex items-center justify-center select-none border-b-2 border-black overflow-hidden"
+            <div className="hidden md:block">
+                <div  onMouseMove={handleMouseMove}  className="relative  h-screen w-full flex items-center justify-center select-none border-b-2 border-black overflow-hidden"
             >
                 <div className="flex flex-col items-center z-10">
-                    <h1 className="text-[6.23rem] mb-8 font-bold text-[#1A1A1A] leading-tight pointer-events-none">
+                    <h1 className="text-[4.5rem] mb-8 font-bold text-[#1A1A1A] leading-tight pointer-events-none">
                         Let’s Get Hyped!
                     </h1>
 
@@ -700,10 +701,11 @@ const HeroPart: React.FC = () => {
                 </AnimatePresence>
             </div>
 
+            </div>
             {/* --- Part-2: Absolute Footer Section --- */}
             <div className="relative w-full  mt-auto">
               <div className="absolute bottom-0 bg-#EAE4D8! left-0 w-full ">
-                {/* <BottomFooter  /> */}
+                <BottomFooter  />
               </div>
 
             </div>

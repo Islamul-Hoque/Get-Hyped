@@ -74,23 +74,40 @@ function Card({ id, title, subTitle, desc, video, href, bg, color, badgeBg, bord
 
     return (
         <div ref={container} className="flex items-center justify-center sticky top-10">
-            <motion.div style={{ scale, rotate, backgroundColor: bg, color: color }} 
-            className="relative w-full rounded-[2.5rem] p-8 md:p-12  flex flex-col gap-6 shadow-xl border border-black/5  overflow-hidden"
+            <motion.div style={{ scale, rotate, backgroundColor: bg, color: color }}
+                className="relative w-full rounded-[2.5rem] p-6 md:p-12  flex flex-col gap-6  border border-black/5  overflow-hidden"
             >
                 {/* Top Row */}
                 <div className="flex justify-between items-start w-full ">
-                    <Link href={href}>
-                        <span style={{ backgroundColor: badgeBg }} className="px-4 py-1.5 rounded-[0.7rem] font-medium text-black cursor-pointer "> Expertise </span>
-                    </Link>
-                    <span className="text-[5.5rem] font-bold opacity-10 leading-[0.5] select-none mr-4 text-current"> {id} </span>
+                    <div className='pb-7 md:pb-0'>
+                        <Link href={href}>
+                            <span style={{ backgroundColor: badgeBg }} className="px-4 py-1.5 rounded-[0.7rem] font-medium text-black cursor-pointer "> Expertise </span>
+                        </Link>
+                    </div>
+                    <span className="text-[3rem] md:text-[5.5rem] font-bold opacity-10 leading-[0.5] select-none mr-4 text-current"> {id} </span>
                 </div>
 
                 {/* Bottom Part */}
-                <div className="flex justify-between items- end flex-1 selection:bg-[#000000] selection:text-white">
+                <div className="flex justify-between  flex-1 selection:bg-[#000000] selection:text-white">
 
                     <div className="flex flex-col justify-between py-2">
                         <Link href={href}>
                             <h2 className="text-3xl md:text-[5.2rem] -mt-8 font-semibold tracking-tighter leading-[0.9] cursor-pointer select-none hover:opacity-90 transition-opacity"> {title} </h2>
+                        </Link>
+
+                        {/* Mobile Video */}
+                        <Link href={href} className="block  md:hidden">
+                            <motion.div
+                                style={{ borderColor: borderColor }}
+                                className="w-[10rem] my-8 aspect-3/4 rounded-[1.1rem] overflow-hidden shadow-2xl border-[8px] relative z-10 bg-black/5 origin-top-left cursor-pointer"
+                                initial={{ rotate: -2 }}
+                                whileHover={{ rotate: -2, scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                            >
+                                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                                    <source src={video} type="video/mp4" />
+                                </video>
+                            </motion.div>
                         </Link>
 
                         <div className="flex flex-col gap-8">
@@ -115,11 +132,11 @@ function Card({ id, title, subTitle, desc, video, href, bg, color, badgeBg, bord
                         </div>
                     </div>
 
-                    {/* Video Link */}
-                    <Link href={href} className="block">
+                    {/* Video */}
+                    <Link href={href} className="hidden md:block">
                         <motion.div
                             style={{ borderColor: borderColor }}
-                            className="w-full md:max-w-[20rem] md:aspect-3/4 rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] relative z-10 bg-black/5 origin-top-left cursor-pointer"
+                            className="w-full md:max-w-[20rem] md:aspect-3/4 rounded-[1.1rem] overflow-hidden shadow-2xl border-[8px] relative z-10 bg-black/5 origin-top-left cursor-pointer"
                             initial={{ rotate: 4 }}
                             whileHover={{ rotate: 4, scale: 1.02 }}
                             transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -212,7 +229,7 @@ function Card({ id, title, subTitle, desc, video, href, bg, color, badgeBg, bord
 //     const cardRef = useRef(null);
 
 //     useGSAP(() => {
-        
+
 //         gsap.to(cardRef.current, {
 //             scale: 0.9,
 //             rotate: i % 2 === 0 ? -3 : 3,

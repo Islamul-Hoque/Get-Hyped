@@ -43,12 +43,12 @@ const BrandSlider = () => {
     return (
         <section className="py-24 bg-[#FAF4EC] overflow-hidden">
             <div className=" px-8 mb-16">
-                <h2 className="max-w-7xl mx-auto text-6xl text-[#1A1A1A] font-semibold selection:bg-black selection:text-white lead ing-[1] ">
+                <h2 className="max-w-7xl mx-auto text-[2.5rem] md:text-[4rem] text-[#1A1A1A] font-semibold selection:bg-black selection:text-white leading-[0.93] md:leading-[1.1] ">
                     These brands <br /> got hyped.
                 </h2>
             </div>
 
-            <div className="embla py-16 cursor-grab active:cursor-grabbing"
+            <div className="embla pb-16 cursor-grab active:cursor-grabbing"
                 ref={emblaRef}
                 onMouseDown={() => setIsHolding(true)}
                 onMouseUp={() => setIsHolding(false)}
@@ -62,9 +62,9 @@ const BrandSlider = () => {
                                     rotate: isHolding ? rotationValues[index % rotationValues.length] : 0
                                 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                                className="w-[270px] h-[270px] border border-black/50 rounded-[0.9rem] flex items-center justify-center bg-transparent"
+                                className=" w-40 h-40  md:w-[16rem] md:h-[16rem] border border-black/50 rounded-[0.9rem] flex items-center justify-center bg-transparent"
                             >
-                                <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
+                                <div className="relative w-40 h-40 md:w-full md:h-full flex items-center justify-center pointer-events-none">
                                     <Image src={brand.src} width={260} height={140} className="object-contain" unoptimized alt="Brand" />
                                 </div>
                             </motion.div>
