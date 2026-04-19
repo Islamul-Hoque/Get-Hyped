@@ -28,7 +28,9 @@ const Navbar = () => {
 
   return (
     <motion.nav  variants={{   visible: { y: 0 },  hidden: { y: "-100%" },   }}  animate={hidden ? "hidden" : "visible"}  transition={{ duration: 0.35, ease: "easeInOut" }} 
-    className="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-10 py-4 z-50000000 "  >
+    className="fixed top-0 left-0 w-full z-[50000000] "  >
+      
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6  py-4"> 
       {/* Logo */}
       <Link href="/" className="w-24 md:w-28 relative z-6000">
         <Logo />
@@ -165,6 +167,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </motion.nav>
   );
 };

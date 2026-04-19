@@ -53,8 +53,8 @@ const cards: Omit<CardProps, 'i'>[] = [
 
 export default function ExpertiseStack() {
     return (
-        <section className="bg-[#FAF4EC] py-20 px-6">
-            <div className="max-w-7xl mx-auto flex flex-col gap-y-20">
+        <section className="bg-[#FAF4EC] py-20 ">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col gap-y-20">
                 {cards.map((card, i) => (<Card key={card.id} {...card} i={i} />))}
             </div>
         </section>
@@ -71,9 +71,8 @@ function Card({ id, title, subTitle, desc, video, href, bg, color, badgeBg, bord
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92])
     const rotate = useTransform(scrollYProgress, [0, 1], [0, i % 2 === 0 ? -2 : 2])
 
-
     return (
-        <div ref={container} className="flex items-center justify-center sticky top-10">
+        <div ref={container} className="flex  items-center justify-center sticky top-10">
             <motion.div style={{ scale, rotate, backgroundColor: bg, color: color }}
                 className="relative w-full rounded-[2.5rem] p-6 md:p-12  flex flex-col gap-6  border border-black/5  overflow-hidden"
             >

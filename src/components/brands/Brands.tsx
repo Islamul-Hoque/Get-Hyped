@@ -42,8 +42,8 @@ const BrandSlider = () => {
 
     return (
         <section className="pt-24  bg-[#FAF4EC] overflow-hidden">
-            <div className=" px-8 mb-16">
-                <h2 className="max-w-7xl mx-auto text-[2.5rem] md:text-[4rem] text-[#1A1A1A] font-semibold selection:bg-black selection:text-white leading-[0.93] md:leading-[1.1] ">
+            <div className="max-w-7xl mx-auto px-6 mb-16">
+                <h2 className=" text-[2.5rem] md:text-[4rem] text-[#1A1A1A] font-semibold selection:bg-black selection:text-white leading-[0.93] md:leading-[1.1] ">
                     These brands <br /> got hyped.
                 </h2>
             </div>

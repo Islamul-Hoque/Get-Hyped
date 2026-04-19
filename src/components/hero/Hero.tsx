@@ -36,9 +36,9 @@ const Hero = () => {
     };
 
     return (
-        <section className="bg-[#FAF4EC] min-h-screen pt-30 px-6 overflow-hidden">
+        <section className="bg-[#FAF4EC] min-h-screen  pt-30  overflow-hidden">
             {/* Header Section */}
-            <div className="max-w-7xl mx-auto mb-12 md:mb-14 text-left">
+            <div className="max-w-7xl mx-auto mb-12 md:mb-14 px-6 text-left ">
                 <h1 className="text-[3.5rem] md:text-[4.8rem] font-bold leading-[1.1] mb-8">
                     <span className="selection:bg-black selection:text-white">Get Hyped. Get</span> <br />
                     <span className="selection:bg-black selection:text-white">Noticed. Get Results.</span>
@@ -51,7 +51,7 @@ const Hero = () => {
             </div>
 
             {/* Cards Grid Container  */}
-            <div className="max-w-7xl   mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
+            <div className="max-w-7xl   px-6 md:px-0 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
                 {cards.slice(0, 4).map((card, index) => (
                     <div key={card.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ transform: `rotate(${card.initialRotate}deg)` }}
                         className={`relative aspect-[3/4.2]  rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden 
@@ -89,8 +89,8 @@ const Hero = () => {
             {/* Bottom Text */}
             <div className="max-w-7xl mx-auto mt-20 md:mt-32 md:pl-20">
                 <div className="w-full md:w-[75%]">
-                    <p className="text-3xl md:text-5xl font-bold leading-[1.3]">
-                        <span className="selection:bg-black selection:text-white">
+                    <p className="text-3xl md:text-5xl  px-6 md:px-0 font-bold leading-[1.3]">
+                        <span className="selection:bg-black selection:text-white ">
                             Wij maken content die opvalt. Die blijft hangen. Die jouw doelgroep raakt en jouw merk in beweging brengt. Snel, krachtig en energiek.
                         </span>
                     </p>

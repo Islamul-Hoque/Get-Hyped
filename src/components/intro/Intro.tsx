@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 
 const Intro = () => {
     return (
-        <section className="bg-[#FAF4EC] py-20 hidden md:block px-6 overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-end gap-10 md:gap-16 relative">
+        <section className="bg-[#FAF4EC] py-20 hidden md:block overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6  flex flex-col md:flex-row items-end gap-10 md:gap-16 relative">
                 <div className="w-full md:w-[210px] shrink-0">
                     <div className="relative aspect-[3/4] rounded-[1rem] overflow-hidden">
                         <Image src="https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/6894757aa6dd3f84f6e463a2_Anniek%20Bril.webp" alt="Anniek Bril" fill className="object-cover" priority />
