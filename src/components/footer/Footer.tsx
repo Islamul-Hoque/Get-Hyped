@@ -655,7 +655,7 @@ const HeroPart: React.FC = () => {
                     <h1 className="text-[4.5rem] mb-8 font-bold text-[#1A1A1A] leading-tight pointer-events-none">   Let’s Get Hyped!  </h1>
 
                     {/* CTA Button */}
-                    {/* <CTAButton /> */}
+                    <CTAButton />
                     {/* Floating Images Animation */}
                     <AnimatePresence>
                     {floatingImages.map((img) => (

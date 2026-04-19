@@ -9,10 +9,10 @@ import { Motorbike } from "lucide-react";
 export default function Home() {
   return (
     <div>
-      {/* <Hero />
+      <Hero />
       <Intro />
       <MobileIntro />
-      <Expertise /> */}
+      <Expertise />
       <ContentScoring />
       <Brands />
     </div>

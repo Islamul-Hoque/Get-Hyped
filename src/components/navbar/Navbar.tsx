@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Logo from "../logo/Logo";
-import NavLinks from "../navLinks/NavLinks";
 
 const navLinks = [
   { name: "Expertises", href: "/expertises" },
@@ -171,25 +170,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-{/* <motion.button
- 
-  initial={{ opacity: 0, y: 200 }} 
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: 100 }}
-  transition={{ 
-    
-    delay: 0.4, 
-    duration: 0.7, 
-    ease: [0.22, 1, 0.36, 1] 
-  }}
-  className="bg-black text-white w-fit px-8 py-5 rounded-[1.2rem] flex items-center justify-center gap-3 font-bold text-xl mt-auto mb-4"
->
-  Get Results
-  <span className="bg-white p-1 rounded-lg">
-    
-  </span>
-</motion.button> */}
