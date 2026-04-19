@@ -44,8 +44,8 @@ export default function ContentScoring() {
         <section className="bg-[#FAF4EC] pb-14 px-6 font-sans">
             <div className="max-w-7xl md:px-20 mx-auto">
                 <div className="-mb-6 md:pl-8 md:w-1/2">
-                    <h2 className="text-5xl md:text-[5.5rem] font-bold tracking-tighter leading-none mb-6">  Content <br /> dat scoort. </h2>
-                    <p className="text-xl md:text-2xl font-semibold  leading-snug text-black/80">
+                    <h2 className="text-5xl md:text-[5.5rem] selectionText font-bold tracking-tighter leading-none mb-6">  Content <br /> dat scoort. </h2>
+                    <p className="text-xl selectionText md:text-2xl font-semibold  md:leading-[1.1] text-black/80">
                         Wij vertellen jouw verhaal. Op een manier die écht past bij jouw doelgroep. Met creatieve content die werkt en het verschil maakt.
                     </p>
 
@@ -70,12 +70,6 @@ export default function ContentScoring() {
                         </motion.div>
                     </motion.button>
                 </div>
-
-                {/* <div className="grid grid-cols-1 md:grid-cols-3 -space-y-24 md:space-y-0 md:gap-16 items-start">
-                    {scoringCards.map((card, index) => (
-                        <ScoringCard key={index} {...card} index={index} />
-                    ))}
-                </div> */}
 
                 <div className="grid grid-cols-1 md:grid-cols-3 md:gap-16 items-start">
                     {scoringCards.map((card, index) => (

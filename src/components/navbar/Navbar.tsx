@@ -32,11 +32,9 @@ const Navbar = () => {
       
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6  py-4"> 
       {/* Logo */}
-      <Link href="/" className="w-24 md:w-28 relative z-6000">
-        <Logo />
-      </Link>
+      <Link href="/" className="w-24 md:w-28 relative z-6000"> <Logo />  </Link>
 
-      {/* Nav Links */}
+      {/* NavLinks */}
       <div className="hidden md:flex bg-white rounded-[0.7rem] px-1.5 py-1 border border-gray-100">
         {navLinks.map((link) => (
           <Link key={link.name} href={link.href} className="relative group px-4 py-1.5 overflow-hidden rounded-[0.7rem] block">
@@ -51,7 +49,6 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      
 
       {/* CTA Button  */}
       <div className="hidden md:block relative z-[60]">
@@ -74,7 +71,7 @@ const Navbar = () => {
         </motion.button>
       </div>
 
-      {/* small screens */}
+      {/* Small Screens */}
       <div className="md:hidden relative z-[60]">
         <motion.button onClick={() => setIsOpen(!isOpen)} className="relative group flex items-center justify-center px-1.5 py-1.5 rounded-[0.7rem]" whileTap={{ scale: 0.95 }} initial="initial" whileHover="hover"
           variants={{
@@ -125,7 +122,7 @@ const Navbar = () => {
             }}
             className="fixed inset-0 bg-[#fcc8f8] z-50 flex flex-col items-center md:hidden m-3 rounded-[0.7rem] px-10 pt-20 pb-10 shadow-2xl overflow-hidden"
           >
-            {/* Nav Links  */}
+            {/* NavLinks  */}
             <div className="grow flex flex-col items-center justify-center gap-2 w-full">
               {navLinks.map((link, i) => (
                 <motion.div key={link.name}

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { FaLinkedinIn, FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-
 const socials = [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/gethypednl/", icon: <FaLinkedinIn size={16} /> },
     { label: "TikTok", href: "https://www.tiktok.com/@gethyped.nl", icon: <FaTiktok size={16} /> },
@@ -25,11 +24,10 @@ const RightContent = () => {
     return (
         <div className=' md:pr-20'>
             <div className='flex md:gap-10  flex-col md:flex-row md:items-end justify-center md:justify-between'>
-                {/* route + social */}
+                {/* NavLink and Social link */}
                 <div>
                     <div className="flex justify-center md:hidden gap-10 px-1.5 py-6">
-                        <motion.button
-                            className="relative bg-[#FA5424] text-white group flex items-center justify-center px-1.5 py-1.5 rounded-[0.7rem]"
+                        <motion.button className="relative bg-[#FA5424] text-white group flex items-center justify-center px-1.5 py-1.5 rounded-[0.7rem]"
                             initial="initial"
                             whileHover="hover"
                             variants={{ hover: { rotate: -4, transition: { type: "spring", stiffness: 300, damping: 12 } } }}
@@ -76,29 +74,29 @@ const RightContent = () => {
                     </div>
                 </div>
 
-                {/* 2nd */}
+                {/* Contact & Address */}
                 <div>
                     <div className="flex flex-col gap-2 md:text-left text-center mb-2 md:mb-6">
                         <div>
-                            <span className="font-bold hidden selectionText md:block text-[0.83rem] ">Contact</span>
-                            <p className="text-[0.73rem] font-medium selectionText  mb-1 md:mb-0">info@gethyped.nl</p>
-                            <p className="text-[0.73rem] font-medium selectionText  ">+31 6 1533 7496</p>
+                            <span className="font-bold hidden selectionText! md:block text-[0.83rem] ">Contact</span>
+                            <p className="text-[0.73rem] font-medium selectionText!  mb-1 md:mb-0">info@gethyped.nl</p>
+                            <p className="text-[0.73rem] font-medium selectionText!  ">+31 6 1533 7496</p>
                         </div>
                         <div>
-                            <span className=" hidden md:block selectionText text-[0.83rem] font-bold  ">Adres</span>
-                            <p className="text-[0.73rem] font-medium  selectionText mb-1 md:mb-0">Beltrumsestraat 6,</p>
-                            <p className="text-[0.73rem] font-medium selectionText ">7141 AL Groenlo</p>
+                            <span className=" hidden md:block selectionText! text-[0.83rem] font-bold  ">Adres</span>
+                            <p className="text-[0.73rem] font-medium  selectionText! mb-1 md:mb-0">Beltrumsestraat 6,</p>
+                            <p className="text-[0.73rem] font-medium selectionText! ">7141 AL Groenlo</p>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            {/* 3th */}
+            {/* Copyright */}
             <div className="flex  flex-col-reverse md:flex-row justify-between items-center  text-[0.7rem] text-gray-500  mb-4">
                 <span className='selectionText'>© 2025 Get Hyped</span>
-                <Link className='hover:text-[#ff4d4d]  my-1 md:my-0  selectionText' href="https://www.dylanbrouwer.design">Design by Dylan</Link>
-                <span className='hover:text-[#ff4d4d]    selectionText'>Privacyvoorwaarden</span>
+                <Link className='hover:text-[#ff4d4d]  my-1 md:my-0  selectionText!' href="https://www.dylanbrouwer.design">Design by Dylan</Link>
+                <span className='hover:text-[#ff4d4d]    selectionText!'>Privacyvoorwaarden</span>
             </div>
         </div>
     );

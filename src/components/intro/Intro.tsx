@@ -21,7 +21,6 @@ const Intro = () => {
                     </div>
 
                     <div className="w-full flex justify-between items-end">
-
                         {/* 'Leer ons kennen' btn */}
                         <motion.button className="relative group flex items-center gap-3 pl-5 pr-1 py-1 border border-black rounded-[0.7rem] font-bold text-base cursor-pointer bg-transparent overflow-hidden" initial="initial" whileHover="hover"
                             variants={{

@@ -100,9 +100,7 @@ const HeroPart: React.FC = () => {
 
                             {/* Small Screen svg */}
                             <svg viewBox="0 0 1860 500" xmlns="http://www.w3.org/2000/svg" className="w-full h-full md:hidden block" preserveAspectRatio="none" >
-                                <path fill="#EAE4D8"
-                                    //  d="M0 70 L1860 20 V500 H0 Z" 
-                                    d=" M 0 100  A 30 30 0 0 1 30 70  L 1830 20   A 30 30 0 0 1 1860 50  V 500  H 0  Z  " />
+                                <path fill="#EAE4D8"  d=" M 0 100  A 30 30 0 0 1 30 70  L 1830 20   A 30 30 0 0 1 1860 50  V 500  H 0  Z  " />
                             </svg>
                         </div>
 

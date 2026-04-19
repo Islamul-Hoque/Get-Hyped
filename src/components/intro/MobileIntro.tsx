@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const MobileIntro = () => {
     return (
-        <section className="bg-[#FAF4EC] md:hidden pt-10 px-6 overflow-hidden">
+        <section className="bg-[#FAF4EC] md:hidden pt-10 pb-20 px-6 overflow-hidden">
             <div className="max-w-7xl  flex flex-col items-start gap-10 relative">
 
                 {/* video */}
