@@ -41,7 +41,7 @@ const BrandSlider = () => {
     const rotationValues = [4, -4, 6, -6, 3, -3, 5, -5];
 
     return (
-        <section className="py-24 bg-[#FAF4EC] overflow-hidden">
+        <section className="pt-24  bg-[#FAF4EC] overflow-hidden">
             <div className=" px-8 mb-16">
                 <h2 className="max-w-7xl mx-auto text-[2.5rem] md:text-[4rem] text-[#1A1A1A] font-semibold selection:bg-black selection:text-white leading-[0.93] md:leading-[1.1] ">
                     These brands <br /> got hyped.
@@ -73,8 +73,8 @@ const BrandSlider = () => {
                 </div>
             </div>
 
-            <div className=" px-8 mt-10">
-                <hr className="border-t border-black/50" />
+            <div className=" px-8 mt-10 pb-5">
+                <hr className="border-t-[1.5px] border-black/10" />
             </div>
         </section>
     );

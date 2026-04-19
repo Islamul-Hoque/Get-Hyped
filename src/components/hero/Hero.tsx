@@ -28,6 +28,7 @@ const Hero = () => {
             rotate: randomExitRotation,
             scale: 1,
             y: 0,
+            x: 10,
             zIndex: 1,
             duration: 0.5,
             ease: "power2.out",
@@ -50,10 +51,10 @@ const Hero = () => {
             </div>
 
             {/* Cards Grid Container  */}
-            <div className="max-w-7xl  mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
+            <div className="max-w-7xl   mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
                 {cards.slice(0, 4).map((card, index) => (
                     <div key={card.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ transform: `rotate(${card.initialRotate}deg)` }}
-                        className={`relative aspect-[3/4.2] rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden 
+                        className={`relative aspect-[3/4.2]  rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden 
                         ${card.type === "text" ? card.bgColor : "bg-black"}
                         ${index >= 2 ? "hidden lg:block" : "block"} 
                     `}
